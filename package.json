@@ -1,0 +1,65 @@
+{
+    "name": "blitzjs-cli-recipe",
+    "version": "1.0.0",
+    "description": "Node-based command-line (cli) for blitzjs.",
+    "keywords": [
+        "anolilab",
+        "blitzjs",
+        "cerebro",
+        "cli",
+        "console"
+    ],
+    "homepage": "https://github.com/anolilab/blitzjs-cli-recipe",
+    "bugs": {
+        "url": "https://github.com/anolilab/blitzjs-cli-recipe/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/anolilab/blitzjs-cli-recipe.git"
+    },
+    "license": "MIT",
+    "author": "Daniel Bannert <d.bannert@anolilab.com> (https://github.com/prisis)",
+    "main": "index.ts",
+    "scripts": {
+        "preinstall": "node verify-node-version.cjs",
+        "postinstall": "husky install",
+        "lint:staged": "lint-staged",
+        "lint:text": "textlint ./.build/ISSUE_TEMPLATE/** ./src/** ./docs/** ./README.md ./UPGRADE.md --dry-run",
+        "prettier": "prettier --config=.prettierrc.cjs --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+        "test": "jest"
+    },
+    "lint-staged": {
+        "*.{js,jsx,less,md,json}": [
+            "prettier --config=./.prettierrc.cjs --write"
+        ]
+    },
+    "dependencies": {
+        "@blitzjs/installer": "^0.38.6",
+        "jscodeshift": "^0.13.0"
+    },
+    "devDependencies": {
+        "@anolilab/eslint-config": "^2.1.3",
+        "@anolilab/prettier-config": "^2.0.1",
+        "@anolilab/textlint-config": "^2.0.5",
+        "@babel/core": "^7.15.0",
+        "@babel/preset-env": "^7.15.0",
+        "@babel/preset-typescript": "^7.15.0",
+        "@types/jest": "^27.0.0",
+        "@types/lodash.merge": "^4.6.6",
+        "@typescript-eslint/eslint-plugin": "^4.29.1",
+        "@typescript-eslint/parser": "^4.29.1",
+        "babel-jest": "^27.0.6",
+        "eslint": "^7.32.0",
+        "eslint-plugin-jest": "^24.4.0",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^7.0.1",
+        "jest": "^27.0.6",
+        "lint-staged": "^11.1.2",
+        "prettier": "^2.3.2",
+        "pretty-quick": "^3.1.1",
+        "react": "^17.0.2",
+        "ts-node": "^10.2.0",
+        "typescript": "^4.3.5"
+    }
+}
